@@ -36,6 +36,7 @@ class MinimalMixerGameClient {
         this.client
             .getScenes()
             .then(() => this.createScenes())
+            .then(() => this.client.synchronizeScenes())
             .then(() => this.goLive())
             .catch(this.mixerGameClientError);
     }
